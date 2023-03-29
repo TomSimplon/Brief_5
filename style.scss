@@ -88,6 +88,19 @@ body {
             width: 150px;
             height: 150px;
             border-radius: 50%;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+              transform: scale(1.05);
+            }
+
+            &:focus {
+              transform: scale(1.05);
+            }
+
+            &:active {
+              transform: scale(1.05);
+            }
           }
         }
       }
@@ -121,3 +134,89 @@ body {
       transform: scale(1.05);
     }
   }
+
+  .nina {
+    height: 100vh;
+    display: flex;
+    background-image: url('../img/nautilus.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .container {
+      display: flex;
+      align-items: center; 
+      justify-content: center; /* Espacement entre les deux groupes d'éléments */
+    }
+
+    .picture {
+      padding: 100px;
+    }
+
+    .picture img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+
+    .nina-img {
+      animation-name: tilt-shaking;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes tilt-shaking {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(5deg); }
+      50% { transform: rotate(0eg); }
+      75% { transform: rotate(-5deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .icons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .icons button {
+      margin-bottom: 20px;
+    }
+    
+    .icons button img {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .color_bar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+    
+    .color_bar span {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      height: 50px;
+      margin-right: 5px;
+      border-radius: 50px;
+      margin-bottom: 35px;
+      margin-top: 11px;
+      border: 5px solid black;
+    }
+    
+    .color_bar .red {
+      background-color: red; /* Barre de couleur rouge */
+    }
+    
+    .color_bar .orange {
+      background-color: orange; /* Barre de couleur orange */
+    }
+    
+    .color_bar .green {
+      background-color: green; /* Barre de couleur verte */
+    }
+}

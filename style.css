@@ -74,6 +74,16 @@ body {
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+}
+.accueil .character .image-wrapper button img:hover {
+  transform: scale(1.05);
+}
+.accueil .character .image-wrapper button img:focus {
+  transform: scale(1.05);
+}
+.accueil .character .image-wrapper button img:active {
+  transform: scale(1.05);
 }
 .accueil .action {
   display: flex;
@@ -99,6 +109,89 @@ body {
   background-color: rgb(23, 201, 23);
   color: black;
   transform: scale(1.05);
+}
+
+.nina {
+  height: 100vh;
+  display: flex;
+  background-image: url("../img/nautilus.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.nina .container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Espacement entre les deux groupes d'éléments */
+}
+.nina .picture {
+  padding: 100px;
+}
+.nina .picture img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.nina .nina-img {
+  animation-name: tilt-shaking;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes tilt-shaking {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0eg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.nina .icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.nina .icons button {
+  margin-bottom: 20px;
+}
+.nina .icons button img {
+  width: 60px;
+  height: 60px;
+}
+.nina .color_bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.nina .color_bar span {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 50px;
+  margin-right: 5px;
+  border-radius: 50px;
+  margin-bottom: 35px;
+  margin-top: 11px;
+  border: 5px solid black;
+}
+.nina .color_bar .red {
+  background-color: red; /* Barre de couleur rouge */
+}
+.nina .color_bar .orange {
+  background-color: orange; /* Barre de couleur orange */
+}
+.nina .color_bar .green {
+  background-color: green; /* Barre de couleur verte */
 }
 
 /*# sourceMappingURL=style.css.map */
