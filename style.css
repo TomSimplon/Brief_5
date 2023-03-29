@@ -106,8 +106,6 @@ body {
   transition: all 0.2s ease-in-out;
 }
 .accueil .bouton:hover {
-  background-color: rgb(23, 201, 23);
-  color: black;
   transform: scale(1.05);
 }
 
@@ -275,6 +273,50 @@ body {
 }
 .jep .color_bar .blue {
   background-color: deepskyblue; /* Barre de couleur verte */
+}
+
+.defeat {
+  height: 100vh;
+  background-image: url("../img/défaite.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.defeat .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+.defeat .text {
+  padding: 30px;
+  max-width: 500px;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.defeat .text p {
+  padding: 50px;
+  font-size: 25px;
+  color: black;
+  background-color: darkgrey;
+}
+.defeat .new_game button {
+  display: inline-block;
+  background-color: rgb(23, 201, 23);
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-decoration: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.defeat .new_game button:hover {
+  transform: scale(1.05);
 }
 
 /*# sourceMappingURL=style.css.map */
