@@ -194,4 +194,87 @@ body {
   background-color: green; /* Barre de couleur verte */
 }
 
+.jep {
+  height: 100vh;
+  display: flex;
+  background-image: url("../img/nautilus.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.jep .container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Espacement entre les deux groupes d'éléments */
+}
+.jep .picture {
+  padding: 100px;
+}
+.jep .picture img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.jep .jep-img {
+  animation-name: tilt-shaking;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes tilt-shaking {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0eg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.jep .icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.jep .icons button {
+  margin-bottom: 20px;
+}
+.jep .icons button img {
+  width: 60px;
+  height: 60px;
+}
+.jep .color_bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.jep .color_bar span {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 50px;
+  margin-right: 5px;
+  border-radius: 50px;
+  margin-bottom: 35px;
+  margin-top: 11px;
+  border: 5px solid black;
+}
+.jep .color_bar .red {
+  background-color: red; /* Barre de couleur rouge */
+}
+.jep .color_bar .orange {
+  background-color: orange; /* Barre de couleur orange */
+}
+.jep .color_bar .blue {
+  background-color: deepskyblue; /* Barre de couleur verte */
+}
+
 /*# sourceMappingURL=style.css.map */
