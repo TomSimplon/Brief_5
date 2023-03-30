@@ -320,13 +320,10 @@ body {
 @media screen and (max-width: 640px) {
   .accueil {
     background-position: center;
+    height: 100%;
   }
-  .accueil .accueil .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 150px 20px;
+  .accueil .container {
+    margin-bottom: 10px;
   }
   .nina {
     height: 100%;
