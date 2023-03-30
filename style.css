@@ -158,18 +158,16 @@ body {
   align-items: center;
   margin-top: 20px;
 }
-.nina .icons button {
-  margin-bottom: 20px;
-}
-.nina .icons button img {
-  width: 60px;
-  height: 60px;
+.nina .icons img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
 }
 .nina .color_bar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 .nina .color_bar span {
   display: flex;
@@ -241,18 +239,17 @@ body {
   align-items: center;
   margin-top: 20px;
 }
-.jep .icons button {
-  margin-bottom: 20px;
-}
-.jep .icons button img {
-  width: 60px;
-  height: 60px;
+.jep .icons img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 .jep .color_bar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 .jep .color_bar span {
   display: flex;
