@@ -177,21 +177,19 @@ body {
       align-items: center;
       margin-top: 20px;
     }
-
-    .icons button {
-      margin-bottom: 20px;
-    }
     
-    .icons button img {
-      width: 60px;
-      height: 60px;
+    .icons img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+      cursor: pointer;
     }
     
     .color_bar {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 20px;
+      margin-top: 50px;
     }
     
     .color_bar span {
@@ -257,52 +255,51 @@ body {
     100% { transform: rotate(0deg); }
   }
 
-  .icons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-  }
+    .icons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+  
+    .icons img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    
+    .color_bar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+    
+    .color_bar span {
+      display: flex;
+      flex-direction: column;
+      width: 400px;
+      height: 50px;
+      margin-right: 5px;
+      border-radius: 50px;
+      margin-bottom: 35px;
+      margin-top: 11px;
+      border: 5px solid black;
+    }
+    
+    .color_bar .red {
+      background-color: red; /* Barre de couleur rouge */
+    }
+    
+    .color_bar .orange {
+      background-color: orange; /* Barre de couleur orange */
+    }
+    
+    .color_bar .blue {
+      background-color:deepskyblue; /* Barre de couleur verte */
+    }
 
-  .icons button {
-    margin-bottom: 20px;
-  }
-  
-  .icons button img {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .color_bar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .color_bar span {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    height: 50px;
-    margin-right: 5px;
-    border-radius: 50px;
-    margin-bottom: 35px;
-    margin-top: 11px;
-    border: 5px solid black;
-  }
-  
-  .color_bar .red {
-    background-color: red; /* Barre de couleur rouge */
-  }
-  
-  .color_bar .orange {
-    background-color: orange; /* Barre de couleur orange */
-  }
-  
-  .color_bar .blue {
-    background-color:deepskyblue; /* Barre de couleur verte */
-  }
 }
 
 .defeat {
@@ -353,4 +350,63 @@ body {
     transform: scale(1.05);
   }
 
+}
+
+@media screen and (max-width: 640px) {
+  .accueil {
+    background-position: center;
+
+  .accueil .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 150px 20px;
+    }
+  }
+
+  .nina {
+    height: 100%;
+    background-position: center;
+    
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  .icons {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  .jep {
+    height: 100%;
+    background-position: center;
+    
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  .icons {
+    display: flex;
+    align-items: center;
+    }
+  }
+}
+
+  .défaite {
+    background-position: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+  }
 }

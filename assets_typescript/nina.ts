@@ -7,17 +7,27 @@ class Nina extends Character {
     decreaseJauges() {
         if (this.health > 50) {
           this.health -= 10;
-          this.hunger -= 10;
-          this.battery -= 10;
         } else if (this.health > 15) {
           this.health -= 6;
-          this.hunger -= 6;
-          this.battery -= 6;
         } else if (this.health > 0) {
           this.health -= 2;
-          this.hunger -= 2;
-          this.battery -= 2;
         }
+
+        if (this.hunger > 50) {
+            this.hunger -= 10;
+          } else if (this.hunger > 15) {
+            this.hunger -= 6;
+          } else if (this.hunger > 0) {
+            this.hunger -= 2;
+          }
+
+          if (this.battery > 50) {
+            this.battery -= 10;
+          } else if (this.battery > 15) {
+            this.battery -= 6;
+          } else if (this.battery > 0) {
+            this.battery -= 2;
+          }
       }
   }
 
