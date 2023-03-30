@@ -30,7 +30,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image: url('../img/écran accueil.png');
+    background-image: url('./img/écran accueil.png');
     background-repeat: no-repeat;
     background-size: cover;
     
@@ -136,7 +136,7 @@ body {
   .nina {
     height: 100vh;
     display: flex;
-    background-image: url('../img/nautilus.png');
+    background-image: url('./img/nautilus.png');
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -222,7 +222,7 @@ body {
 .jep {
   height: 100vh;
   display: flex;
-  background-image: url('../img/nautilus.png');
+  background-image: url('./img/nautilus.png');
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -307,7 +307,7 @@ body {
 
 .defeat {
   height: 100vh;
-  background-image: url('../img/défaite.png');
+  background-image: url('./img/défaite.png');
   background-repeat: no-repeat;
   background-size: cover;
 
