@@ -66,6 +66,7 @@ if (jep.hunger < 100) {
 }
 });
 
+// Navigation dynamique entre les sections
 const ninaCharacterButton: Element | null = document.querySelector(".nina-character");
 const jepCharacterButton: Element | null = document.querySelector(".jep-character");
 const actionButton: Element | null = document.querySelector(".bouton");
@@ -97,6 +98,16 @@ defeatButton.addEventListener("click", () => {
   jep.defeatSection.classList.add('hidden');
   accueilSection.classList.remove("hidden");
 })
+
+const form: Element | null = document.querySelector('.form');
+const button: Element | null = document.querySelector('.bouton');
+const text: Element | null = document.querySelector('.text');
+
+button.addEventListener('click', (event) => {
+  event.preventDefault();
+  const name = (form.querySelector('input[type="text"]') as HTMLInputElement).value;
+  text.innerHTML = `<p><strong>Vous êtes mort ${name} !</strong></p>`;
+});
 
 }); 
 
