@@ -173,7 +173,7 @@ body {
 .nina .color_bar span {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 100%;
   height: 50px;
   margin-right: 5px;
   border-radius: 50px;
@@ -255,7 +255,7 @@ body {
 .jep .color_bar span {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 100%;
   height: 50px;
   margin-right: 5px;
   border-radius: 50px;

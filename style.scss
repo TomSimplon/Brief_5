@@ -191,17 +191,33 @@ body {
       align-items: center;
       margin-top: 50px;
     }
+
+    .color_bar {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .color_bar ul {
+      width: 400px;
+
+      li {
+        width: 100%;
+      }
+    }
     
     .color_bar span {
       display: flex;
       flex-direction: column;
-      width: 400px;
+      width: 100%;
       height: 50px;
       margin-right: 5px;
       border-radius: 50px;
       margin-bottom: 35px;
       margin-top: 11px;
       border: 5px solid black;
+      transition: width 0.5s ease-in-out;
     }
     
     .color_bar .red {
@@ -275,17 +291,26 @@ body {
       align-items: center;
       margin-top: 50px;
     }
+
+    .color_bar ul {
+      width: 400px;
+
+      li {
+        width: 100%;
+      }
+    }
     
     .color_bar span {
       display: flex;
       flex-direction: column;
-      width: 400px;
+      width: 80%;
       height: 50px;
       margin-right: 5px;
       border-radius: 50px;
       margin-bottom: 35px;
       margin-top: 11px;
       border: 5px solid black;
+      transition: width 0.5s ease-in-out;
     }
     
     .color_bar .red {
@@ -299,7 +324,6 @@ body {
     .color_bar .blue {
       background-color:deepskyblue; /* Barre de couleur verte */
     }
-
 }
 
 .defeat {
@@ -407,3 +431,4 @@ body {
     }
   }
 }
+
