@@ -11,16 +11,12 @@ body {
   display: none;
 }
 
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .accueil {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-image: url("./img/écran accueil.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -170,6 +166,18 @@ body {
   align-items: center;
   margin-top: 50px;
 }
+.nina .color_bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+.nina .color_bar ul {
+  width: 400px;
+}
+.nina .color_bar ul li {
+  width: 100%;
+}
 .nina .color_bar span {
   display: flex;
   flex-direction: column;
@@ -180,6 +188,7 @@ body {
   margin-bottom: 35px;
   margin-top: 11px;
   border: 5px solid black;
+  transition: width 0.5s ease-in-out;
 }
 .nina .color_bar .red {
   background-color: red; /* Barre de couleur rouge */
@@ -252,16 +261,23 @@ body {
   align-items: center;
   margin-top: 50px;
 }
+.jep .color_bar ul {
+  width: 400px;
+}
+.jep .color_bar ul li {
+  width: 100%;
+}
 .jep .color_bar span {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   height: 50px;
   margin-right: 5px;
   border-radius: 50px;
   margin-bottom: 35px;
   margin-top: 11px;
   border: 5px solid black;
+  transition: width 0.5s ease-in-out;
 }
 .jep .color_bar .red {
   background-color: red; /* Barre de couleur rouge */

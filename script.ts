@@ -1,7 +1,13 @@
 import Nina from "./assets_typescript/nina";
 import Jep from "./assets_typescript/jep";
 
-// Fonction pour mettre à jour les barres de jauge
+window.addEventListener('load', function() { // On récupère toutes les sections
+  const sections = document.querySelectorAll('section:not(#accueil)');
+  sections.forEach(function(section) {
+    section.classList.add('hidden');
+  });
+
+  // Fonction pour mettre à jour les barres de jauge
 function updateBar(bar: HTMLElement, value: number) {
   bar.style.width = `${value}%`;
 }
@@ -59,4 +65,40 @@ if (jep.hunger < 100) {
   updateBar(jep.jepHungerBar, jep.hunger);
 }
 });
+
+const ninaCharacterButton: Element | null = document.querySelector(".nina-character");
+const jepCharacterButton: Element | null = document.querySelector(".jep-character");
+const actionButton: Element | null = document.querySelector(".bouton");
+const accueilSection: Element | null = document.querySelector("#accueil");
+const defeatButton: Element | null = document.querySelector(".menu")
+
+let lastCharacterClicked: string;
+
+ninaCharacterButton.addEventListener("click", () => {
+  lastCharacterClicked = 'nina';
+  actionButton.addEventListener("click", () => {
+    accueilSection.classList.add("hidden");
+    jep.jepSection.classList.add('hidden');
+    nina.ninaSection.classList.remove("hidden");
+  });
+});
+
+jepCharacterButton.addEventListener("click", () => {
+  lastCharacterClicked = 'jep';
+  actionButton.addEventListener("click", () => {
+    accueilSection.classList.add("hidden");
+    nina.ninaSection.classList.add('hidden');
+    jep.jepSection.classList.remove("hidden");
+  });
+});
+
+defeatButton.addEventListener("click", () => {
+  nina.defeatSection.classList.add('hidden');
+  jep.defeatSection.classList.add('hidden');
+  accueilSection.classList.remove("hidden");
+})
+
+}); 
+
+
 
