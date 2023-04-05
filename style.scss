@@ -130,6 +130,8 @@ body {
     }
   }
 
+  // Section Nina
+
   .nina {
     height: 100vh;
     display: flex;
@@ -222,6 +224,8 @@ body {
       background-color: green; /* Barre de couleur verte */
     }
 }
+
+// Section Jep
 
 .jep {
   height: 100vh;
@@ -316,6 +320,8 @@ body {
     }
 }
 
+// Section défaite
+
 .defeat {
   height: 100vh;
   background-image: url('./img/défaite.png');
@@ -366,6 +372,7 @@ body {
 
 }
 
+// Partie Responsive
 @media screen and (max-width: 640px) {
   .accueil {
     background-position: center;

@@ -71,25 +71,64 @@ const ninaCharacterButton: Element | null = document.querySelector(".nina-charac
 const jepCharacterButton: Element | null = document.querySelector(".jep-character");
 const actionButton: Element | null = document.querySelector(".bouton");
 const accueilSection: Element | null = document.querySelector("#accueil");
-const defeatButton: Element | null = document.querySelector(".menu")
+const defeatButton: Element | null = document.querySelector(".menu");
+const form: HTMLInputElement | null = document.querySelector('.form input[type="text"]');
+const text: Element | null = document.querySelector('.text');
 
 let lastCharacterClicked: string;
+let isFormValid: boolean = false;
+let isNameValid: boolean = false;
+
+// Mise à jour de l'état du formulaire lorsque l'utilisateur saisit son nom
+if (form) {
+  form.addEventListener("input", () => {
+    isFormValid = form.value.trim() !== "";
+    updateStartButton();
+  });
+}
+
+// Mise à jour de l'état du bouton de démarrage
+function updateStartButton() {
+  if (actionButton) {
+    actionButton.disabled = !isFormValid || !isCharacterSelected;
+  }
+}
+
+// Mise à jour de l'état du formulaire lorsque l'utilisateur sélectionne un personnage
+let isCharacterSelected: boolean = false;
+if (ninaCharacterButton && jepCharacterButton) {
+  ninaCharacterButton.addEventListener("click", () => {
+    isCharacterSelected = true;
+    updateStartButton();
+    lastCharacterClicked = 'nina';
+  });
+
+  jepCharacterButton.addEventListener("click", () => {
+    isCharacterSelected = true;
+    updateStartButton();
+    lastCharacterClicked = 'jep';
+  });
+}
 
 ninaCharacterButton.addEventListener("click", () => {
   lastCharacterClicked = 'nina';
   actionButton.addEventListener("click", () => {
-    accueilSection.classList.add("hidden");
-    jep.jepSection.classList.add('hidden');
-    nina.ninaSection.classList.remove("hidden");
+    if (isFormValid) {
+      accueilSection.classList.add("hidden");
+      jep.jepSection.classList.add('hidden');
+      nina.ninaSection.classList.remove("hidden");
+    }
   });
 });
 
 jepCharacterButton.addEventListener("click", () => {
   lastCharacterClicked = 'jep';
   actionButton.addEventListener("click", () => {
-    accueilSection.classList.add("hidden");
-    nina.ninaSection.classList.add('hidden');
-    jep.jepSection.classList.remove("hidden");
+    if (isFormValid) {
+      accueilSection.classList.add("hidden");
+      nina.ninaSection.classList.add('hidden');
+      jep.jepSection.classList.remove("hidden");
+    }
   });
 });
 
@@ -97,17 +136,14 @@ defeatButton.addEventListener("click", () => {
   nina.defeatSection.classList.add('hidden');
   jep.defeatSection.classList.add('hidden');
   accueilSection.classList.remove("hidden");
-})
-
-const form: Element | null = document.querySelector('.form');
-const button: Element | null = document.querySelector('.bouton');
-const text: Element | null = document.querySelector('.text');
-
-button.addEventListener('click', (event) => {
-  event.preventDefault();
-  const name = (form.querySelector('input[type="text"]') as HTMLInputElement).value;
-  text.innerHTML = `<p><strong>Vous êtes mort ${name} !</strong></p>`;
 });
+
+// Mise à jour du contenu de la section défaite
+if (defeatButton && text) {
+  actionButton.addEventListener("click", () => {
+    text.innerHTML = `<p><strong>Vous êtes mort ${form?.value} !</strong></p>`;
+  });
+}
 
 }); 
 
