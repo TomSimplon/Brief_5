@@ -77,7 +77,6 @@ const text: Element | null = document.querySelector('.text');
 
 let lastCharacterClicked: string;
 let isFormValid: boolean = false;
-let isNameValid: boolean = false;
 
 // Mise à jour de l'état du formulaire lorsque l'utilisateur saisit son nom
 if (form) {
@@ -143,6 +142,45 @@ if (defeatButton && text) {
   actionButton.addEventListener("click", () => {
     text.innerHTML = `<p><strong>Vous êtes mort ${form?.value} !</strong></p>`;
   });
+}
+
+const audio: HTMLAudioElement | null = document.querySelector("#audio-menu");
+if (accueilSection) {
+  const playAudio = () => {
+    if (audio) {
+      audio.play();
+      audio.loop = true;
+    }
+  }
+
+  const stopAudio = () => {
+    if (audio) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  }
+
+  // Fonction pour jouer ou arrêter l'audio
+  const toggleAudio = () => {
+    if (accueilSection.classList.contains("hidden")) {
+      stopAudio();
+    } else {
+      playAudio();
+    }
+  }
+
+  // Écouter le changement de classe pour jouer ou arrêter l'audio
+  accueilSection.addEventListener("transitionend", toggleAudio);
+
+  // Jouer l'audio initialement si la section accueil n'est pas cachée
+  if (!accueilSection.classList.contains("hidden")) {
+    playAudio();
+  }
+  
+  // Arrêter l'audio lorsque le bouton est cliqué
+  if (actionButton) {
+    actionButton.addEventListener("click", stopAudio);
+  }
 }
 
 }); 
