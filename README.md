@@ -12,14 +12,14 @@
 # Cahier des charges
 
 ## Fonctionnel
-- L’utilisateur arrive sur un écran d’accueil, celui-ci contient un formulaire pour saisir le nom de son compagnon et sélectionner le type de compagnon qu’il souhaite jouer. Il lance le jeu à l’aide d’un bouton “commercer”.
+- L’utilisateur arrive sur un écran d’accueil, celui-ci contient un formulaire pour saisir le nom de son compagnon et sélectionner le type de compagnon qu’il souhaite jouer. Il lance le jeu à l’aide d’un bouton “Lancer le jeu”.
 
-- Vos compagnons ont trois jauges indiquant le niveau d’un besoin (par exemple : bonheur, soif et faim. Vous êtes libre de changer l’intitulé des jauges), chaque compagnon à au moins une de ces trois jauges qui lui est propre.
+- Vos compagnons ont trois jauges indiquant le niveau d’un besoin (par exemple : vie, soif et faim. Vous êtes libre de changer l’intitulé des jauges), chaque compagnon a au moins une de ces trois jauges qui lui est propre.
 
-- Le niveau des jauges baisse automatiquement et chaque jauge dispose d’un bouton pour l’alimenter. Lorsque les trois jauges tombent à zéro l’utilisateur à perdu.
+- Le niveau des jauges baisse automatiquement et chaque jauge dispose d’un bouton pour l’alimenter. Lorsque l'une des trois jauges tombent à zéro, l’utilisateur a perdu.
 
 ## Technique
-- Votre jeu comporte à minima une classe parente et deux classes enfants qui l'étendent. Les compagnons à disposition de l’utilisateur sont vos classes enfants, exemple :
+- Votre jeu comporte à minima une classe parent et deux classes enfants qui l'étendent. Les compagnons à disposition de l’utilisateur sont vos classes enfants, exemple :
 * Classe parent (l’utilisateur ne peut pas la jouer) : Character
 * Classes enfants (l’utilisateur peut les jouer) : Nina et Jep
 
@@ -33,7 +33,7 @@
 ## Critères de performance
 - Le site respecte le cahier des charges
 - Les fonctionnalités attendues ne produisent pas d’erreurs
-- Le site est responsive est s’adapte à un maximum d’écran
+- Le site est responsive et s’adapte à un maximum d’écran
 - L'interface est conforme à la maquette
 - Les fichiers et assets sont organisés
 - La page est fonctionnelle
