@@ -6,7 +6,7 @@
 # Contexte du projet
 - Dans le cadre du salon du jeu vidéo rétro, la marque Bandai souhaite faire un clin d'oeil à l’un de ses succès des années 90 : le Tamagochi !
 
-- Vous devrez faire appel à votre créativité ce tamagotchi sur le thème du jeu vidéo en point & click "Retour sur l'île mystérieuse" sorti en 2005 par la boite française Kheops Studio, néanmoins vous devrez satisfaire les contraintes techniques et fonctionnelles fournies par Bandai dans le cahier des charges.
+- Vous devrez faire appel à votre créativité pour ce tamagotchi sur le thème du jeu vidéo en point & click "Retour sur l'île mystérieuse" sorti en 2005 par la boite française Kheops Studio, néanmoins vous devrez satisfaire les contraintes techniques et fonctionnelles fournies par Bandai dans le cahier des charges.
 
 
 ## Cahier des charges
