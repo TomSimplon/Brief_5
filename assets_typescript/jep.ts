@@ -6,6 +6,9 @@ class Jep extends Character {
   jepWaterBar: Element | null = document.querySelector("#jep .color_bar .blue");
   jepSection: Element | null = document.querySelector("#jep");
   defeatSection: Element | null = document.querySelector('#defeat');
+  audioJep: HTMLAudioElement | null = document.querySelector("#audio-jep");
+  audioDefeat = document.querySelector("#audio-defeat") as HTMLAudioElement;
+  audioReviens = document.querySelector("#reviens_jep") as HTMLAudioElement;
   constructor(health: number = 100, hunger: number = 100, public water: number = 100) {
     super(health, hunger);
     setInterval(() => {
@@ -32,6 +35,7 @@ class Jep extends Character {
         this.health -= 6;
       } else if (this.health > 0) {
         this.health -= 2;
+        this.playAudioReviens();
       }
       if(this.jepHealthBar) {
         this.updateBar(this.jepHealthBar, this.health)
@@ -39,6 +43,9 @@ class Jep extends Character {
       if(this.health <= 0) {
         this.jepSection.classList.add('hidden');
         this.defeatSection.classList.remove('hidden');
+        this.stopAudioJep();
+        this.AudioDefeat();
+        this.stopAudioReviens();
       }
     }
 
@@ -49,6 +56,7 @@ class Jep extends Character {
           this.hunger -= 6;
         } else if (this.hunger > 0) {
           this.hunger -= 2;
+          this.playAudioReviens();
         }
         if(this.jepHungerBar) {
           this.updateBar(this.jepHungerBar, this.hunger)
@@ -56,6 +64,9 @@ class Jep extends Character {
         if(this.hunger <= 0) {
           this.jepSection.classList.add('hidden');
           this.defeatSection.classList.remove('hidden');
+          this.stopAudioJep();
+          this.AudioDefeat();
+          this.stopAudioReviens();
         }
     }
 
@@ -66,6 +77,7 @@ class Jep extends Character {
           this.water -= 6;
         } else if (this.water > 0) {
           this.water -= 2;
+          this.playAudioReviens();
         }
         if(this.jepWaterBar) {
           this.updateBar(this.jepWaterBar, this.water)
@@ -73,8 +85,36 @@ class Jep extends Character {
         if(this.water <= 0) {
           this.jepSection.classList.add('hidden');
           this.defeatSection.classList.remove('hidden');
+          this.stopAudioJep();
+          this.AudioDefeat();
+          this.stopAudioReviens();
         }
     }
+
+    playAudioJep() {
+      this.audioJep.play();
+      this.audioJep.loop = true;
+    }
+    
+    stopAudioJep() {
+      this.audioJep.pause();
+      this.audioJep.currentTime = 0;
+    }
+
+    AudioDefeat() {
+      this.audioDefeat.play();
+      this.audioDefeat.loop = true;
+    }
+
+    playAudioReviens() {
+      this.audioReviens.play();
+    }
+
+    stopAudioReviens() {
+      this.audioReviens.pause();
+      this.audioReviens.currentTime = 0;
+    }
+
 }
 
 export default Jep;

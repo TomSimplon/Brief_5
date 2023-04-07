@@ -18,11 +18,16 @@ const jep: Jep = new Jep();
 
 // Événement pour augmenter les jauges de Nina
 const ninaHealthButton: Element | null = document.querySelector(".nina .health");
+const ninaHealthAudio: Element | null = document.querySelector("#nina_health");
+const ninaHungerAudio: Element | null = document.querySelector("#eat_nina");
+const ninaBatteryAudio: Element | null = document.querySelector("#battery");
+
 ninaHealthButton.addEventListener("click", () => {
 if (nina.health < 100) {
   nina.health += 10;
   nina.updateBar(nina.ninaHealthBar, nina.health)
 }
+ninaHealthAudio.play();
 });
 
 const ninaHungerButton: Element | null = document.querySelector(".nina .hunger");
@@ -31,6 +36,7 @@ if (nina.hunger < 100) {
   nina.hunger += 10;
   nina.updateBar(nina.ninaHungerBar, nina.hunger);
 }
+ninaHungerAudio.play();
 });
 
 const ninaBatteryButton: Element | null = document.querySelector(".nina .battery");
@@ -39,15 +45,20 @@ if (nina.battery < 100) {
   nina.battery += 10;
   nina.updateBar(nina.ninaBatteryBar, nina.battery);
 }
+ninaBatteryAudio.play();
 });
 
 // Événement pour augmenter les jauges de Jep
 const jepHealthButton: Element | null = document.querySelector(".jep .health");
+const jepHealthAudio: Element | null = document.querySelector("#jep_health");
+const jepHungerAudio: Element | null = document.querySelector("#eat_jep");
+const jepWaterAudio: Element | null = document.querySelector("#water");
 jepHealthButton.addEventListener("click", () => {
 if (jep.health < 100) {
   jep.health += 10;
   updateBar(jep.jepHealthBar, jep.health);
 }
+jepHealthAudio.play();
 });
 
 const jepWaterButton: Element | null = document.querySelector(".jep .water");
@@ -56,6 +67,7 @@ if (jep.water < 100) {
   jep.water += 10;
   updateBar(jep.jepWaterBar, jep.water);
 }
+jepWaterAudio.play();
 });
 
 const jepHungerButton: Element | null = document.querySelector(".jep .hunger");
@@ -64,9 +76,11 @@ if (jep.hunger < 100) {
   jep.hunger += 10;
   updateBar(jep.jepHungerBar, jep.hunger);
 }
+jepHungerAudio.play();
 });
 
 // Navigation dynamique entre les sections
+
 const ninaCharacterButton: Element | null = document.querySelector(".nina-character");
 const jepCharacterButton: Element | null = document.querySelector(".jep-character");
 const actionButton: Element | null = document.querySelector(".bouton");
@@ -131,6 +145,7 @@ jepCharacterButton.addEventListener("click", () => {
   });
 });
 
+// Bouton pour revenir à la page d'accueil
 defeatButton.addEventListener("click", () => {
   nina.defeatSection.classList.add('hidden');
   jep.defeatSection.classList.add('hidden');
@@ -143,6 +158,8 @@ if (defeatButton && text) {
     text.innerHTML = `<p><strong>Vous êtes mort ${form?.value} !</strong></p>`;
   });
 }
+
+// Mise en place des audios dynamiques
 
 const audio: HTMLAudioElement | null = document.querySelector("#audio-menu");
 if (accueilSection) {
@@ -160,7 +177,7 @@ if (accueilSection) {
     }
   }
 
-  // Fonction pour jouer ou arrêter l'audio
+  // Fonction pour jouer ou arrêter l'audio de la section accueil
   const toggleAudio = () => {
     if (accueilSection.classList.contains("hidden")) {
       stopAudio();
@@ -169,7 +186,7 @@ if (accueilSection) {
     }
   }
 
-  // Écouter le changement de classe pour jouer ou arrêter l'audio
+  // Écouter le changement de classe pour jouer ou arrêter l'audio de la section accueil
   accueilSection.addEventListener("transitionend", toggleAudio);
 
   // Jouer l'audio initialement si la section accueil n'est pas cachée
@@ -177,11 +194,39 @@ if (accueilSection) {
     playAudio();
   }
   
-  // Arrêter l'audio lorsque le bouton est cliqué
+  // Arrêter l'audio lorsque le bouton pour lancer le jeu est cliqué
   if (actionButton) {
     actionButton.addEventListener("click", stopAudio);
   }
 }
+
+// Arrêter l'audio lorsque la partie est perdue
+nina.ninaSection.addEventListener("transitionend", () => {
+  if (nina.ninaSection.classList.contains("hidden")) {
+    nina.stopAudioNina();
+  } else {
+    nina.playAudioNina();
+  }
+});
+
+jep.jepSection.addEventListener("transitionend", () => {
+  if (jep.jepSection.classList.contains("hidden")) {
+    jep.stopAudioJep();
+  } else {
+    jep.playAudioJep();
+  }
+});
+
+// Arrêter l'audio de la section défaite lorsque l'utilisateur clique sur le bouton pour revenir à la page d'accueil
+const menuButton = document.querySelector("#defeat .menu") as HTMLButtonElement;
+
+menuButton.addEventListener("click", () => {
+  nina.audioDefeat.pause();
+  jep.audioDefeat.pause();
+  nina.audioDefeat.currentTime = 0;
+  jep.audioDefeat.currentTime = 0;
+});
+
 
 }); 
 

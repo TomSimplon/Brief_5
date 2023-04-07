@@ -20,7 +20,6 @@ body {
 }
 
 // Début du code pour la section accueil
-  
   .accueil {
     height: 100vh;
     display: flex;
@@ -141,7 +140,7 @@ body {
     .container {
       display: flex;
       align-items: center; 
-      justify-content: center; /* Espacement entre les deux groupes d'éléments */
+      justify-content: center; 
     }
 
     .picture {
@@ -235,7 +234,7 @@ body {
   .container {
     display: flex;
     align-items: center; 
-    justify-content: center; /* Espacement entre les deux groupes d'éléments */
+    justify-content: center; 
   }
 
   .picture {
@@ -366,7 +365,6 @@ body {
   .new_game button:hover {
     transform: scale(1.05);
   }
-
 }
 
 // Partie Responsive

@@ -4,6 +4,4 @@ class Character {
   }
 }
 
-console.log(Character);
-
 export default Character;
